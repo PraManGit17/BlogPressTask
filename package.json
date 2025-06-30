@@ -17,8 +17,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.1",
     "next": "15.3.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-quill": "^2.0.0",
     "slugify": "^1.6.6"
   },

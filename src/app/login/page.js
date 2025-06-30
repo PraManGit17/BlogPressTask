@@ -62,7 +62,7 @@ const page = () => {
         </form>
 
         <div className={`${montserrat.className} text-sm flex items-center gap-2`}>
-          <div>Don't Have An Account With BlogPress? </div>
+          <div>Don&apos;t have an account?</div>
           <div className='font-bold'>Sign Up</div>
         </div>
 

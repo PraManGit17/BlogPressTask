@@ -55,7 +55,7 @@ const PostForm = () => {
       if (!res.ok) throw new Error(data.error || 'Something went wrong');
 
       setMessage('Post created successfully!');
-      
+
       setTitle('');
       editor?.commands.setContent('');
     } catch (err) {
@@ -83,7 +83,7 @@ const PostForm = () => {
               onChange={(e) => setTitle(e.target.value)}
               required
             />
-            <div className="block font-normal mt-1 ml-5 text-sm">Enter Your Blog's Title</div>
+            <div className="block font-normal mt-1 ml-5 text-sm">Enter Your Blog Title</div>
           </div>
 
           <div className='w-[80%]'>
@@ -112,7 +112,7 @@ const PostForm = () => {
 
         <div className='w-[60%] h-full flex items-start justify-center py-4 mb-8'>
           <div className='w-full px-4 h-full'>
-            <div className="block font-medium mb-1 text-2xl ml-1">Blog's Content :</div>
+            <div className="block font-medium mb-1 text-2xl ml-1">Blog Content :</div>
             <div className="relative border rounded-md min-h-[250px] h-full overflow-y-auto focus-within:ring-2 focus-within:ring-blue-500 px-2 py-1">
               <EditorContent editor={editor} />
             </div>

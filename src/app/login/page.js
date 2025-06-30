@@ -62,9 +62,10 @@ const page = () => {
         </form>
 
         <div className={`${montserrat.className} text-sm flex items-center gap-2`}>
-          <div>Dont have an account?</div>
+          <div>Don&apos;t have an account?</div>
           <div className='font-bold'>Sign Up</div>
         </div>
+
 
       </div>
 

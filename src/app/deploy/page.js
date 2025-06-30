@@ -1,11 +1,11 @@
 import React from 'react'
 
-const test = () => {
+const page = () => {
   return (
     <div>
-      Deployment works!!
+      Depolyed
     </div>
   )
 }
 
-export default test
+export default page

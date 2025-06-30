@@ -3,8 +3,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { montserrat, poppins } from '../font';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
-const page = () => {
+const Loginpage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -42,11 +43,8 @@ const page = () => {
 
       <div className="w-1/2 h-full flex items-end justify-center py-8">
         <div className="w-[75%] h-full rounded-3xl overflow-hidden">
-          <img
-            src="/images/northern.jpg"
-            alt="Logo"
-            className="w-full h-full object-cover rounded-2xl"
-          />
+          <Image src="/images/northern.jpg" alt="Logo" width={200} height={100}
+            className="w-full h-full object-cover rounded-2xl" />
         </div>
       </div>
 
@@ -90,6 +88,7 @@ const page = () => {
             </label>
             <input
               name='password'
+              type='password'
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder='Enter Your Password'
@@ -146,4 +145,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Loginpage

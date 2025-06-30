@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const Page = () => {
+const SignUppage = () => {
   const textRef = useRef(null);
   const textRef1 = useRef(null);
   const textRef2 = useRef(null);
@@ -263,6 +263,7 @@ const Page = () => {
             </label>
             <input
               name='password'
+              type='password'
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder='Enter Your Password'
@@ -299,11 +300,8 @@ const Page = () => {
 
       <div ref={rightSideref} className="w-1/2 h-full flex items-start justify-center py-8 opacity-0">
         <div className="w-[75%] h-full rounded-3xl overflow-hidden">
-          <img
-            src="/images/northern.jpg"
-            alt="Logo"
-            className="w-full h-full object-cover rounded-2xl"
-          />
+          <Image src="/images/northern.jpg" alt="Logo" width={200} height={100}
+            className="w-full h-full object-cover rounded-2xl" />
         </div>
       </div>
 
@@ -340,4 +338,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default SignUppage;

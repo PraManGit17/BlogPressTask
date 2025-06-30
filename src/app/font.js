@@ -6,6 +6,6 @@ export const poppins = Poppins({
 });
 
 export const montserrat = Montserrat({
-  weight: ['400'],
+  weight: ['600'],
   subsets: ['latin'],
 });

@@ -200,7 +200,7 @@ const SignUppage = () => {
     if (res.ok) {
       setSuccess(true);
       setTimeout(() => {
-        router.push('/login');
+        router.push('/');
       }, 8000);
     } else {
       setError(data.error || 'SignUp Failed');

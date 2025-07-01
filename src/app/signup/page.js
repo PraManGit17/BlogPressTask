@@ -201,7 +201,7 @@ const SignUppage = () => {
       setSuccess(true);
       setTimeout(() => {
         router.push('/');
-      }, 8000);
+      }, 5000);
     } else {
       setError(data.error || 'SignUp Failed');
       alert(`${data.error}. Try Login Else`);

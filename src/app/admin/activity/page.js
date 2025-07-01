@@ -10,6 +10,8 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const cardsRef = useRef([]);
 
+  const images = ['northern.jpg', 'cover1.jpeg', 'cover.jpeg', 'cover3.jpeg', 'cover7.jpeg', 'cover6.jpeg' , 'cover4.jpeg'];
+
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch('/api/activity');
@@ -31,6 +33,10 @@ const Page = () => {
       });
     }
   }, [loading]);
+
+  const getRandomImage = () => {
+    return images[Math.floor(Math.random() * images.length)];
+  };
 
   return (
     <div className="w-full min-h-[89vh] bg-gray-100 p-4 md:p-6 flex flex-col items-start gap-6 md:gap-8">
@@ -54,27 +60,30 @@ const Page = () => {
           <hr className='hidden md:block h-full border border-gray-400'></hr>
 
           <div className="w-full flex flex-wrap gap-4 justify-start items-start">
-            {posts.map((post, index) => (
-              <Link
-                key={post._id}
-                href={`/admin/activity/${post.slug}`}
-                ref={(el) => (cardsRef.current[index + 1] = el)} // +1 to skip "Add a New Blog"
-                className="w-[47%] sm:w-[30%] md:w-[22%] lg:w-[18%] min-w-[150px] max-w-[200px] h-[240px] bg-white border rounded-xl flex flex-col items-center p-2 text-sm font-medium hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="w-full h-[80%] rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/northern.jpg"
-                    alt="Blog Thumbnail"
-                    width={300}
-                    height={200}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-                <div className="w-full h-[20%] flex items-center justify-center text-xs md:text-sm text-center px-1">
-                  {post.title}
-                </div>
-              </Link>
-            ))}
+            {posts.map((post, index) => {
+              const img = getRandomImage();
+              return (
+                <Link
+                  key={post._id}
+                  href={`/admin/activity/${post.slug}`}
+                  ref={(el) => (cardsRef.current[index + 1] = el)} // +1 to skip "Add a New Blog"
+                  className="w-[47%] sm:w-[30%] md:w-[22%] lg:w-[18%] min-w-[150px] max-w-[200px] h-[240px] bg-white border rounded-xl flex flex-col items-center p-2 text-sm font-medium hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="w-full h-[80%] rounded-xl overflow-hidden">
+                    <Image
+                      src={`/images/${img}`}
+                      alt="Blog Thumbnail"
+                      width={300}
+                      height={200}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                  </div>
+                  <div className="w-full h-[20%] flex items-center justify-center text-xs md:text-sm text-center px-1">
+                    {post.title}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}

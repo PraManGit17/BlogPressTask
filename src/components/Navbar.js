@@ -63,8 +63,8 @@ const Navbar = () => {
               </button>
               <p className='text-gray-800 font-medium'>Hi there! 👋</p>
               <p className='text-gray-600 mt-1'>
-                I'm <span className="font-semibold">Pratham Manjrekar</span>, the developer of BlogPress.
-                I’d love to connect on LinkedIn!
+                I am <span className="font-semibold">Pratham Manjrekar</span>, the developer of BlogPress.
+                I would love to connect on LinkedIn!
               </p>
               <button
                 className="mt-3 w-full bg-blue-600 text-white py-1.5 rounded hover:bg-blue-700"

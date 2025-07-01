@@ -309,12 +309,12 @@ const SignUppage = () => {
             <p className={`${poppins.className} text-lg font-semibold text-center`}>
               Account Successfully Created!
             </p>
-            <button
+            {/* <button
               onClick={() => router.push('/login')}
               className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
-            >
-              Go to Login
-            </button>
+            > */}
+              Redirecting To Homepage
+            {/* </button> */}
           </div>
         </div>
       )}

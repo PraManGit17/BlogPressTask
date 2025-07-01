@@ -2,7 +2,6 @@
 import mongoose from 'mongoose';
 
 export const connectDB = async () => {
-  // const MONGODB_URI="mongodb+srv://pra172005:praman17@blogpresscluster.qflcymk.mongodb.net/BlogPress?retryWrites=true&w=majority&appName=BlogPressCluster";
   
   try {
     if (mongoose.connection.readyState >= 1) {

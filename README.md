@@ -40,51 +40,53 @@
 
 ## 📁 Folder Structure
 
-src/
+📁 src/
 │
-├── app/
-│ ├── admin/
-│ │ ├── activity/
-│ │ │ └── [slug]/page.js # Edit Post page
-│ │ └── create/page.js # Create Post page
-│ │
-│ ├── api/
-│ │ ├── activity/
-│ │ │ └── [slug]/route.js # PUT & DELETE blog post
-│ │ ├── login/route.js # Login endpoint
-│ │ ├── logout/route.js # Logout endpoint
-│ │ ├── posts/
-│ │ │ ├── [slug]/route.js # GET single post
-│ │ │ └── create/route.js # POST new post
-│ │ └── signup/route.js # Signup endpoint
-│ │
-│ ├── login/page.js # Login page
-│ ├── signup/page.js # Signup page
-│ ├── posts/
-│ │ └── [slug]/page.js # Public blog view page
-│ ├── font.js # Custom fonts (if used)
-│ ├── layout.js # Global layout
-│ ├── page.js # Landing page
-│ └── globals.css # Global styles
+├── 📁 app/
+│   ├── 📁 admin/
+│   │   ├── 📁 activity/
+│   │   │   └── [slug]/page.js           # Edit Post page
+│   │   └── create/page.js               # Create Post page
+│   │
+│   ├── 📁 api/
+│   │   ├── 📁 activity/
+│   │   │   ├── [slug]/route.js          # PUT & DELETE blog post (secured)
+│   │   │   └── route.js                 # GET all posts by logged-in user
+│   │   ├── 📁 posts/
+│   │   │   ├── [slug]/route.js          # GET single blog post by slug (public)
+│   │   │   ├── create/route.js          # Create a new blog post (secured)
+│   │   │   └── route.js                 # GET all public blog posts
+│   │   ├── login/route.js               # Login endpoint
+│   │   ├── logout/route.js              # Logout endpoint
+│   │   └── signup/route.js              # Signup endpoint
+│   │
+│   ├── login/page.js                    # Login page
+│   ├── signup/page.js                   # Signup page
+│   ├── 📁 posts/
+│   │   └── [slug]/page.js               # Public blog view page (reader view)
+│   ├── font.js                          # Custom fonts (if used)
+│   ├── layout.js                        # Global layout
+│   ├── page.js                          # Landing page (homepage)
+│   └── globals.css                      # Global styles
 │
-├── components/
-│ ├── Editform/Editform.js # Form for editing post
-│ ├── Postform/PostForm.js # Form for creating post
-│ ├── Footer.js # Footer component
-│ ├── HeroSection.js # Hero section on homepage
-│ ├── Navbar.js # Navbar
-│ └── PostList.js # Lists all posts
+├── 📁 components/
+│   ├── Editform/Editform.js            # Form for editing a blog post
+│   ├── Postform/PostForm.js            # Form for creating a new blog post
+│   ├── Footer.js                       # Footer component
+│   ├── HeroSection.js                  # Hero section on homepage with search
+│   ├── Navbar.js                       # Navigation bar
+│   └── PostList.js                     # Lists all posts
 │
-├── lib/
-│ ├── auth.js # Auth middleware
-│ ├── db.js # MongoDB connection
-│ └── getTokenData.js # Extracts user data from token
+├── 📁 lib/
+│   ├── auth.js                         # Auth middleware and JWT logic
+│   ├── db.js                           # MongoDB connection setup
+│   └── getTokenData.js                 # Extracts user data from token
 │
-├── models/
-│ ├── Admin.js # Admin schema
-│ └── Post.js # Post schema
+├── 📁 models/
+│   ├── Admin.js                        # Admin schema
+│   └── Post.js                         # Post schema
 │
-└── middleware.js # JWT middleware logic
+└── middleware.js                       # JWT middleware logic
 
 ## Clone the repo
 

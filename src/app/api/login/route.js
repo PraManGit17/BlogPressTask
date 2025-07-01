@@ -28,7 +28,10 @@ export async function POST(req) {
       { status: 401 });
   }
 
-  const token = generateToken(admin._id);
+  // const token = generateToken(admin._id);
+
+  const token = generateToken({ id: admin._id, email: admin.email });
+
   const response = NextResponse.json({ success: true });
 
   response.cookies.set('token', token, {

@@ -29,7 +29,8 @@ export async function POST(req) {
       password: hashedPwd,
     });
 
-    const token = generateToken(newAdmin._id);
+    // const token = generateToken(newAdmin._id);
+    const token = generateToken({ id: newAdmin._id, email: newAdmin.email });
 
     const response = NextResponse.json({
       success: true,

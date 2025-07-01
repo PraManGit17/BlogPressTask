@@ -1,10 +1,8 @@
-// import jwt from 'jsonwebtoken';
+
 
 // export const generateToken = (id) => {
 
-
-//   const JWT_SECRET="myJWTsecret123";
-//   return jwt.sign({ id }, JWT_SECRET, {
+//   return jwt.sign({ id }, process.env.JWT_SECRET, {
 //     expiresIn: '7d',
 //   });
 // };
@@ -16,15 +14,15 @@
 
 import jwt from 'jsonwebtoken';
 
-export const generateToken = (id) => {
-
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: '7d',
-  });
+export const generateToken = (user) => {
+  return jwt.sign(
+    {
+      id: user._id,
+      email: user.email, 
+    },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: '7d',
+    }
+  );
 };
-
-export const verifyToken = (token) => {
-  return jwt.verify(token, process.env.JWT_SECRET);
-};
-
-
